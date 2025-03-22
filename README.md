@@ -1,61 +1,53 @@
 # AI Text Formatter
 
-A modern web application that transforms AI-generated text into beautifully formatted Word documents. Features include automatic page breaks for headings, proper spacing, and table formatting.
+A web application that converts AI-generated text (like ChatGPT responses) into properly formatted Word documents while preserving markdown formatting.
 
 ## Features
 
-- 🎨 Beautiful modern UI with dark mode support
-- 📝 Live markdown preview
-- 📄 Converts markdown to properly formatted Word documents
-- 📊 Special handling for tables and formatting
-- 🌙 Dark/Light theme toggle
-- 💫 Smooth animations and transitions
+- Paste AI-generated text with markdown formatting
+- Live preview of formatted text
+- Convert and download as Word document (.docx)
+- Modern and responsive UI
+- Supports common markdown elements (headers, bold, italic, code blocks, lists)
 
-## Getting Started
+## Setup
 
-### Prerequisites
+1. Install Node.js if you haven't already (https://nodejs.org)
 
-- Node.js (v14 or higher)
-- npm (v6 or higher)
+2. Install backend dependencies:
+   ```bash
+   cd backend
+   npm install
+   ```
 
-### Installation
+3. Start the backend server:
+   ```bash
+   npm start
+   ```
 
-1. Clone the repository:
-```bash
-git clone https://github.com/YOUR_USERNAME/ai-text-formatter.git
-cd ai-text-formatter
-```
-
-2. Install dependencies:
-```bash
-cd backend
-npm install
-```
-
-3. Start the server:
-```bash
-npm start
-```
-
-4. Open `frontend/index.html` in your browser
-
-### Development
-
-The project consists of two main parts:
-- Frontend: Pure HTML/CSS/JS for a lightweight experience
-- Backend: Node.js server for document conversion
+4. Open the frontend:
+   - Use VS Code's Live Server extension to serve the frontend directory
+   - Right-click on `frontend/index.html` and select "Open with Live Server"
 
 ## Usage
 
-1. Paste your AI-generated text in the input box
-2. Preview the formatting in real-time
-3. Click "Convert & Download" to get your formatted Word document
-4. The document will automatically download with proper formatting
+1. Open the application in your browser (typically at http://127.0.0.1:5500/frontend/index.html)
+2. Paste your AI-generated text into the input field
+3. The preview section will show you how the text will be formatted
+4. Click "Convert & Download" to get your formatted Word document
 
-## Contributing
+## Supported Markdown Features
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+- Headers (# for h1, ## for h2, ### for h3)
+- Bold text (**text**)
+- Italic text (*text*)
+- Code blocks (```code```)
+- Inline code (`code`)
+- Lists (- item)
 
-## License
+## Development
 
-This project is licensed under the MIT License - see the LICENSE file for details 
+- Frontend: HTML, CSS, and JavaScript
+- Backend: Node.js with Express
+- Document conversion: docx library
+- Markdown parsing: marked library 

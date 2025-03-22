@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Formatter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle dark mode">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="gradient-bg"></div>
+        
+        <header>
+            <h1>AI Text Formatter</h1>
+            <p class="subtitle">Transform your AI-generated text into beautifully formatted documents</p>
+        </header>
+        
+        <main>
+            <div class="card input-section">
+                <textarea id="inputText" placeholder="Paste your AI-generated text here..."></textarea>
+            </div>
+            
+            <div class="button-section">
+                <button id="convertBtn" class="primary-button">
+                    <span class="button-text">Convert & Download</span>
+                    <span class="button-icon">📄</span>
+                </button>
+            </div>
+
+            <div class="card preview-section">
+                <div class="preview-header">
+                    <h2>Preview</h2>
+                    <div class="preview-notice">
+                        <p>📝 Note: Tables may appear simplified in the preview but will be properly formatted in the final document.</p>
+                    </div>
+                </div>
+                <div id="previewContent" class="preview-content"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Created by robin with ❤️ for better document formatting</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

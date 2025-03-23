@@ -32,7 +32,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s ease;
 }
 
 body {
@@ -42,7 +41,7 @@ body {
     line-height: 1.6;
     position: relative;
     min-height: 100vh;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .gradient-bg {
@@ -89,13 +88,11 @@ body {
     cursor: pointer;
     padding: 0.8rem;
     border-radius: 50%;
-    box-shadow: 0 2px 8px var(--shadow-color);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 #themeToggle:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 .dark-mode .sun { display: inline; }
@@ -135,21 +132,18 @@ textarea {
     border-radius: 12px;
     font-size: 1rem;
     resize: vertical;
-    transition: all 0.3s ease;
     background-color: var(--card-bg);
     color: var(--text-color);
+    transition: border-color 0.3s ease;
 }
 
 textarea:hover {
-    transform: translateY(-2px);
     border-color: var(--primary-color);
 }
 
 textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px var(--shadow-color);
-    transform: translateY(-2px);
 }
 
 .button-section {
@@ -174,10 +168,12 @@ textarea:focus {
 
 .preview-section {
     padding: 0;
+    background: none;
 }
 
 .preview-header {
     margin-bottom: 1.5rem;
+    background: none;
 }
 
 .preview-header h2 {
@@ -199,12 +195,24 @@ textarea:focus {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     background-color: var(--card-bg);
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
 .preview-content:hover {
-    transform: translateY(-2px);
     border-color: var(--primary-color);
+}
+
+/* Remove all card styling */
+.card, .preview-section, .input-section {
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+.card:hover, .preview-section:hover, .input-section:hover {
+    box-shadow: none;
+    background: none;
+    border: none;
 }
 
 footer {
@@ -213,6 +221,7 @@ footer {
     padding: 2rem 0;
     color: var(--text-color);
     opacity: 0.8;
+    background: none;
 }
 
 @keyframes gradient {
@@ -279,11 +288,10 @@ footer {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     background-color: var(--card-bg);
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
 .feature-item:hover {
-    transform: translateY(-2px);
     border-color: var(--primary-color);
 }
 
@@ -309,4 +317,16 @@ footer {
         width: 100%;
         max-width: 100%;
     }
+}
+
+/* Remove ALL hover backgrounds and transitions */
+.card, .preview-section, .input-section, .container, .preview-header, footer {
+    background: none !important;
+    transition: none !important;
+}
+
+.card:hover, .preview-section:hover, .input-section:hover, .container:hover, .preview-header:hover, footer:hover {
+    background: none !important;
+    box-shadow: none !important;
+    transform: none !important;
 } 

@@ -66,7 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
             convertBtn.innerHTML = '<span class="button-text">Converting...</span><span class="button-icon">⏳</span>';
             
             // Send to backend for conversion
-            const response = await fetch('http://localhost:3000/api/convert', {
+            const apiUrl = window.location.hostname === 'localhost' 
+                ? 'http://localhost:3000/api/convert'
+                : 'https://ai-text-formatter.vercel.app/api/convert';
+                
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

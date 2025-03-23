@@ -63,7 +63,7 @@ Feel free to open issues or submit pull requests if you have suggestions for imp
 
 ## License
 
-MIT License - feel free to use this project for your own purposes.
+GNU General Public License v3.0
 
 ## Development
 

@@ -259,7 +259,7 @@ function markdownToDocxElements(markdown) {
                     new Paragraph({
                         children: [
                             new TextRun({
-                                text: token.text,
+                                text: cleanMarkdownText(token.text),
                                 bold: true,
                                 size: fontSize * 2
                             })
@@ -347,11 +347,7 @@ function markdownToDocxElements(markdown) {
                             children: token.header.map(header => 
                                 new TableCell({
                                     children: [new Paragraph({
-                                        children: [new TextRun({
-                                            text: header.text,
-                                            bold: true,
-                                            size: 20
-                                        })],
+                                        children: parseInlineMarkdown(header.text),
                                         spacing: { before: 50, after: 50 }
                                     })],
                                     width: {
@@ -376,10 +372,7 @@ function markdownToDocxElements(markdown) {
                                 children: row.map(cell => 
                                     new TableCell({
                                         children: [new Paragraph({
-                                            children: [new TextRun({
-                                                text: cell.text,
-                                                size: 20
-                                            })],
+                                            children: parseInlineMarkdown(cell.text),
                                             spacing: { before: 50, after: 50 }
                                         })],
                                         width: {

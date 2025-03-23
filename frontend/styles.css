@@ -140,10 +140,16 @@ textarea {
     color: var(--text-color);
 }
 
+textarea:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+}
+
 textarea:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 2px var(--shadow-color);
+    transform: translateY(-2px);
 }
 
 .button-section {
@@ -193,6 +199,12 @@ textarea:focus {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     background-color: var(--card-bg);
+    transition: all 0.3s ease;
+}
+
+.preview-content:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
 }
 
 footer {
